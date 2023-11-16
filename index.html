@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script>
+        //Retrieve a list of Asteroids based on their closest approach date to Earth
+        //uses our API key "CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97"
+        const URL = "https://api.nasa.gov/neo/rest/v1/feed?start_date=2023-11-15&end_date=2023-11-16&api_key=CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97";
+
+        //put fetch function into constants
+        async function makeAPICall() 
+        {
+            const result = await fetch(URL);
+            const data = await result.json();
+            //call display asteroid names function
+            displayAsteroidNames(data);
+        }
+
+        //function to loop through asteroid data and display the names
+        function displayAsteroidNames(data) 
+        {
+            const asteroidsInfo = document.getElementById("asteroids-info");
+
+            //clear content of asteroidsInfo
+            asteroidsInfo.innerHTML = "";
+
+            //get data from 'data.near_earth_objects' 
+            for (const date in data.near_earth_objects) 
+            {
+                const asteroidsOnDate = data.near_earth_objects[date];
+                for (const asteroid of asteroidsOnDate) 
+                {
+                    const asteroidElement = document.createElement("p");
+                    asteroidElement.textContent = asteroid.name;
+                    asteroidsInfo.appendChild(asteroidElement);
+                }
+            }
+        }
+
+        makeAPICall();
+    </script>
+</head>
+<body>
+    <h1>Asteroid Names for closest approach on 11-15-2023</h1>
+    <div id="asteroids-info"></div>
+</body>
+</html>
