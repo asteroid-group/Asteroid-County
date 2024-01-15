@@ -1,5 +1,9 @@
+
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>Asteroid County</title>
+    <link rel= "stylesheet" href = "styles.css">
     <script>
         //Retrieve a list of Asteroids based on their closest approach date to Earth
         //uses our API key "CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97"
@@ -38,8 +42,26 @@
         makeAPICall();
     </script>
 </head>
+
 <body>
-    <h1>Asteroid Names for closest approach on 11-15-2023</h1>
-    <div id="asteroids-info"></div>
+    
+        <h1>Asteroid Names for closest approach on 11-15-2023</h1>
+        <div class="topnav">
+            <a class="active" href="index.html">Who's there...?</a>
+            <a> "What if..?"</a>
+            <a> "Do You Know...?"</a>
+            <a> "Who...?"</a>
+        </div>
+
+       <div class= "float-parent-element">
+            <div class="float-child-element">
+                <div class="sidebar" id="asteroids-info"></div>
+            </div>
+            <div class="float-child-element">
+                <div class="fullinfo"> tbd......</div>
+            </div> 
+      </div>
+       </div>
+
 </body>
 </html>
