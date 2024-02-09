@@ -17,7 +17,8 @@
         const todayFormatted = formatDate(today);
 
         //retrieve a list of asteroids based on their closest approach date to Earth
-        //uses our API key "CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97"
+        //uses our API key CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97
+        const apiKey = "CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97";
         const URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${todayFormatted}&end_date=${todayFormatted}&api_key=CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97`;
 
         //function to handle API call and loading message
@@ -29,29 +30,56 @@
                 const result = await fetch(URL);
                 const data = await result.json();
                 //call display asteroid names function
-                displayAsteroidNames(data);
+                displayANames(data);
+                // displayAsteroidNames(data);
             } catch (error) {
                 console.error("Error fetching data:", error);
                 //handle errors 
             }
         }
 
-        //function to display asteroid names
+        //asteroid buttons with name and id
+        function displayANames(data)
+        {
+            document.getElementById("loading-message").style.display = "none";
+
+            const asteroidButtons = document.getElementById("asteroid-buttons");
+
+            //retrieve names for buttons
+            for(const date in data.near_earth_objects)
+            {
+                const asteroidsOnDate = data.near_earth_objects[date];
+                for(const asteroid of asteroidsOnDate)
+                {
+                    const button = document.createElement("button");
+                    button.classList.add("asteroid-button");
+                    button.textContent = asteroid.name;
+                    button.dataset.asteroidId = asteroid.id;
+                    button.addEventListener("click", displayAsteroidNames);
+                    asteroidButtons.appendChild(button);
+                }
+            }
+
+        }
+
+        // change function to display asteroid names
         function displayAsteroidNames(data) {
             //hide loading message
             document.getElementById("loading-message").style.display = "none";
+           
 
             const asteroidsInfo = document.getElementById("asteroids-info");
 
-            //clear content of asteroidsInfo
+             //clear content of asteroidsInfo
             asteroidsInfo.innerHTML = "";
+
 
             //get data from 'data.near_earth_objects'
             for (const date in data.near_earth_objects) {
                 const asteroidsOnDate = data.near_earth_objects[date];
                 for (const asteroid of asteroidsOnDate) {
                     const asteroidElement = document.createElement("p");
-                    asteroidElement.innerHTML = `Name: ${asteroid.name}<br>Close approach date and time:<br>${asteroid.close_approach_data[0].close_approach_date_full} <br>Diameter Min: ${asteroid.estimated_diameter.meters.estimated_diameter_min} meters<br>Diameter Max: ${asteroid.estimated_diameter.meters.estimated_diameter_max} meters<br>Potentially hazardous?: ${asteroid.is_potentially_hazardous_asteroid}<br>Velocity: ${asteroid.close_approach_data[0].relative_velocity.kilometers_per_hour} km per hour`;
+                    asteroidsInfo.innerHTML = `Name: ${asteroid.name}<br>Close approach date and time:<br>${asteroid.close_approach_data[0].close_approach_date_full} <br>Diameter Min: ${asteroid.estimated_diameter.meters.estimated_diameter_min} meters<br>Diameter Max: ${asteroid.estimated_diameter.meters.estimated_diameter_max} meters<br>Potentially hazardous?: ${asteroid.is_potentially_hazardous_asteroid}<br>Velocity: ${asteroid.close_approach_data[0].relative_velocity.kilometers_per_hour} km per hour`;
                     asteroidsInfo.appendChild(asteroidElement);
                 }
             }
@@ -77,9 +105,9 @@
         <div class="float-child-element">
 
             <!-- loading message -->
-            <div class="sidebar" id="loading-message">Loading...</div>
+            <div class="sidebar" id="loading-message"> Loading...</div>
             <!-- Asteroids info container -->
-            <div class="sidebar" id="asteroids-info"></div>
+            <div class="sidebar" id="asteroid-buttons"></div>
         </div>
         <div class="float-child-element">
             <div class="fullinfo"> tbd......</div>
