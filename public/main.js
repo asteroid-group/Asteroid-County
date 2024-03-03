@@ -4,13 +4,13 @@ let responseURL;
 if (typeof window === 'undefined') {
   // Node.js environment (e.g., during server-side rendering)
   const isDevelopment = process.env.VERCEL_ENV === 'development';
-  responseURL = isDevelopment ? 'http://localhost:3001' : 'asteroid-county-simonkaley-asteroid-group.vercel.app';
+  responseURL = isDevelopment ? 'http://localhost:3000' : 'asteroid-county-simonkaley-asteroid-group.vercel.app';
 } else {
   // Browser environment
-  responseURL = 'http://localhost:3001';
+  responseURL = 'http://localhost:3000';
 }
 */
-responseURL = 'asteroid-county-simonkaley-asteroid-group.vercel.app';
+responseURL = 'https://asteroid-county.vercel.app';
 
 document.addEventListener('DOMContentLoaded', function() {
 

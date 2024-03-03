@@ -13,10 +13,11 @@ app.use(cors());
 app.use(express.json());
 
 
+
 app.get('/api/asteroids/:name', async (req, res) => {
     try {
       const { name } = req.params;
-      //console.log('Decoded Name:', decodeURIComponent(name));
+      console.log('Decoded Name:', decodeURIComponent(name));
       const asteroid = await prisma.asteroid.findFirst({
         where: {
           name: {
@@ -112,10 +113,21 @@ app.delete('/api/asteroids', async (req, res) => {
     }
   });
 
-  if (!POSTGRES_URL) {
-    console.error('Missing POSTGRES_URL environment variable. Make sure to set it.');
-  }
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+  const startServer = async () => {
+    try {
+      if (!POSTGRES_URL) {
+        throw new Error('Missing POSTGRES_URL environment variable. Make sure to set it.');
+      }
+  
+      await prisma.$connect();
+  
+      app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+      });
+    } catch (error) {
+      console.error('Error during server startup:', error);
+      process.exit(1); // Exit the process in case of an error during startup
+    }
+  };
+  
+  startServer();
