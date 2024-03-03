@@ -1,4 +1,4 @@
-const responseURL='http://localhost:3000'
+const responseURL='https://asteroid-county.vercel.app'
 
 //'http://localhost:3000' for localhost testing
 //'https://asteroid-county.vercel.app' for deployment
