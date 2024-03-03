@@ -1,4 +1,4 @@
-const responseURL='asteroid-county-bn6lfn45k-simon-kaleys-projects.vercel.app'
+const responseURL='https://asteroid-county-9lmdsi5h7-asteroid-group.vercel.app'
 
 //'http://localhost:3000/api/asteroids' for localhost testing
 //'asteroid-county-bn6lfn45k-simon-kaleys-projects.vercel.app' for deployment
