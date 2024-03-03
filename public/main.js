@@ -1,7 +1,16 @@
-const responseURL='https://asteroid-county.vercel.app'
-
-//'http://localhost:3001' for localhost testing
-//'https://asteroid-county.vercel.app' for deployment
+let responseURL;
+/*
+// Check if the code is running in a Node.js environment
+if (typeof window === 'undefined') {
+  // Node.js environment (e.g., during server-side rendering)
+  const isDevelopment = process.env.VERCEL_ENV === 'development';
+  responseURL = isDevelopment ? 'http://localhost:3001' : 'asteroid-county-simonkaley-asteroid-group.vercel.app';
+} else {
+  // Browser environment
+  responseURL = 'http://localhost:3001';
+}
+*/
+responseURL = 'asteroid-county-simonkaley-asteroid-group.vercel.app';
 
 document.addEventListener('DOMContentLoaded', function() {
 
