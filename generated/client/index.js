@@ -123,7 +123,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\Simon\\Desktop\\asteroid\\Asteroid-Cities\\generated\\client",
+      "value": "C:\\Users\\Simon\\Desktop\\asteroid\\asteroid-cities\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -134,6 +134,10 @@ const config = {
         "fromEnvVar": null,
         "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "rhel-openssl-1.0.x"
       }
     ],
     "previewFeatures": [],
@@ -150,6 +154,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "ciName": "Vercel",
   "inlineDatasources": {
     "db": {
@@ -159,8 +164,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// schema.prisma\r\n\r\ndatasource db {\r\n  provider = \"postgresql\"\r\n  url = env(\"POSTGRES_PRISMA_URL\") // uses connection pooling\r\n  directUrl = env(\"POSTGRES_URL_NON_POOLING\") // uses a direct connection\r\n}\r\n\r\ngenerator client {\r\n  provider = \"prisma-client-js\"\r\n  output   = \"./generated/client\"\r\n}\r\n\r\nmodel Asteroid {\r\n  id                   Int      @id @default(autoincrement())\r\n  name                 String\r\n  closeApproachDate    DateTime\r\n  diameterMin          Float\r\n  diameterMax          Float\r\n  potentiallyHazardous Boolean\r\n  velocity             Float\r\n}",
-  "inlineSchemaHash": "b714cd449ec3a357eeaa07e7c9c9b513523ba30ebf6a9de2d8a3f88afdf75528",
+  "inlineSchema": "\r\n\r\ndatasource db {\r\n  provider = \"postgresql\"\r\n  url = env(\"POSTGRES_PRISMA_URL\") //uses connection pooling\r\n  directUrl = env(\"POSTGRES_URL_NON_POOLING\") //uses a direct connection\r\n}\r\n\r\ngenerator client {\r\n  provider = \"prisma-client-js\"\r\n  binaryTargets = [\"native\", \"rhel-openssl-1.0.x\"]\r\n  output   = \"./generated/client\"\r\n}\r\n\r\nmodel Asteroid {\r\n  id                   Int      @id @default(autoincrement())\r\n  name                 String\r\n  closeApproachDate    DateTime\r\n  diameterMin          Float\r\n  diameterMax          Float\r\n  potentiallyHazardous Boolean\r\n  velocity             Float\r\n}",
+  "inlineSchemaHash": "1770d20c6e4914c1d40a8fd52702db1ce2614754011ea169dfb1e3221d95f378",
   "copyEngine": true
 }
 
@@ -200,6 +205,10 @@ Object.assign(exports, Prisma)
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
 path.join(process.cwd(), "generated/client/query_engine-windows.dll.node")
+
+// file annotations for bundling tools to include these files
+path.join(__dirname, "libquery_engine-rhel-openssl-1.0.x.so.node");
+path.join(process.cwd(), "generated/client/libquery_engine-rhel-openssl-1.0.x.so.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "generated/client/schema.prisma")
