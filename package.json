@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "node server.js",
+    "start": "node server.js",
+    "build": "mkdir -p public && echo 'No build steps necessary' > public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,7 +17,8 @@
     "express": "^4.18.3"
   },
   "devDependencies": {
-    "prisma": "^5.10.2"
+    "prisma": "^5.10.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
   }
-  
 }
