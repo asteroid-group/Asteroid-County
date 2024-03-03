@@ -4,13 +4,10 @@ const { PrismaClient } = require('./generated/client');
 
 const prisma = new PrismaClient();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Use the cors middleware
-app.use(cors({
-  origin: ['https://asteroid-county.vercel.app', 'http://localhost:3000'],
-
-}));
+app.use(cors());
 
 app.use(express.json());
 
