@@ -1,7 +1,7 @@
-const responseURL='asteroid-county-git-main-asteroid-group.vercel.app'
+const responseURL='https://asteroid-county.vercel.app'
 
 //'http://localhost:3000' for localhost testing
-//'https://asteroid-county-9lmdsi5h7-asteroid-group.vercel.app' for deployment
+//'https://asteroid-county.vercel.app' for deployment
 
 document.addEventListener('DOMContentLoaded', function() {
 
