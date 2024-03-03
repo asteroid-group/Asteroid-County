@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "builds": [{ "src": "server.js", "use": "@vercel/node" }],
+    "routes": [
+      { "src": "/api/asteroids/:name", "dest": "/api/asteroids/:name" },
+      { "src": "/api/asteroids/byDate/:date", "dest": "/api/asteroids/byDate/:date" },
+      { "src": "/api/asteroids", "dest": "/api/asteroids" },
+      { "src": "/(.*)", "dest": "/index.html" }
+    ]
+  }
