@@ -7,7 +7,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Use the cors middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://asteroid-county.vercel.app', 'http://localhost:3000'],
+
+}));
 
 app.use(express.json());
 
