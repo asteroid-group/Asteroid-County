@@ -4,64 +4,8 @@
     <meta charset="UTF-8">
     <title>Asteroid County</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-
-        //function to format the date as YYYY-MM-DD
-        function formatDate(date) {
-            const year = date.getFullYear();
-            const month = (date.getMonth() + 1).toString().padStart(2, '0');
-            const day = date.getDate().toString().padStart(2, '0');
-            return `${year}-${month}-${day}`;
-        }
-        const today = new Date();
-        const todayFormatted = formatDate(today);
-
-        //retrieve a list of asteroids based on their closest approach date to Earth
-        //uses our API key "CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97"
-        const URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${todayFormatted}&end_date=${todayFormatted}&api_key=CwyJtXtFTiCZ8iBbx58gRuSxSvlBUTj543CCgc97`;
-
-        //function to handle API call and loading message
-        async function makeAPICall() {
-            //display loading message
-            document.getElementById("loading-message").textContent = "Loading...";
-
-            try {
-                const result = await fetch(URL);
-                const data = await result.json();
-                //call display asteroid names function
-                displayAsteroidNames(data);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                //handle errors 
-            }
-        }
-
-        //function to display asteroid names
-        function displayAsteroidNames(data) {
-            //hide loading message
-            document.getElementById("loading-message").style.display = "none";
-
-            const asteroidsInfo = document.getElementById("asteroids-info");
-
-            //clear content of asteroidsInfo
-            asteroidsInfo.innerHTML = "";
-
-            //get data from 'data.near_earth_objects'
-            for (const date in data.near_earth_objects) {
-                const asteroidsOnDate = data.near_earth_objects[date];
-                for (const asteroid of asteroidsOnDate) {
-                    const asteroidElement = document.createElement("p");
-                    asteroidElement.innerHTML = `Name: ${asteroid.name}<br>Close approach date and time:<br>${asteroid.close_approach_data[0].close_approach_date_full} <br>Diameter Min: ${asteroid.estimated_diameter.meters.estimated_diameter_min} meters<br>Diameter Max: ${asteroid.estimated_diameter.meters.estimated_diameter_max} meters<br>Potentially hazardous?: ${asteroid.is_potentially_hazardous_asteroid}<br>Velocity: ${asteroid.close_approach_data[0].relative_velocity.kilometers_per_hour} km per hour`;
-                    asteroidsInfo.appendChild(asteroidElement);
-                }
-            }
-        }
-
-        //execute the API call function after the page has loaded
-        window.onload = makeAPICall;
-    </script>
+    <script src="main.js" defer></script>
 </head>
-
 <body>
     <h1>Near Earth Objects Today</h1>
     <div class="topnav">
@@ -71,15 +15,10 @@
         <a> "Who...?"</a>
     </div>
 
-    
-
     <div class="float-parent-element">
         <div class="float-child-element">
-
-            <!-- loading message -->
-            <div class="sidebar" id="loading-message">Loading...</div>
-            <!-- Asteroids info container -->
-            <div class="sidebar" id="asteroids-info"></div>
+            <div class="sidebar" id="loading-message"> Loading...</div>
+            <div class="sidebar" id="asteroid-buttons"></div>
         </div>
         <div class="float-child-element">
             <div class="fullinfo"> tbd......</div>
