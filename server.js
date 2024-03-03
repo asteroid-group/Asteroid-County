@@ -4,13 +4,14 @@ const { PrismaClient } = require('./generated/client');
 
 const prisma = new PrismaClient();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+const POSTGRES_URL = process.env.POSTGRES_URL;
 
 // Use the cors middleware
 app.use(cors());
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/api/asteroids/:name', async (req, res) => {
     try {
@@ -111,10 +112,9 @@ app.delete('/api/asteroids', async (req, res) => {
     }
   });
 
-// Catch-all route to serve 'index.html' for non-API routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+  if (!POSTGRES_URL) {
+    console.error('Missing POSTGRES_URL environment variable. Make sure to set it.');
+  }
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
