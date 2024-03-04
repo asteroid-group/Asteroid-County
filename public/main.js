@@ -1,16 +1,11 @@
 let responseURL;
 /*
-// Check if the code is running in a Node.js environment
-if (typeof window === 'undefined') {
-  // Node.js environment (e.g., during server-side rendering)
-  const isDevelopment = process.env.VERCEL_ENV === 'development';
-  responseURL = isDevelopment ? 'http://localhost:3000' : 'asteroid-county-simonkaley-asteroid-group.vercel.app';
-} else {
-  // Browser environment
+
+  // for testing
   responseURL = 'http://localhost:3000';
 }
 */
-responseURL = 'https://asteroid-county.vercel.app';
+responseURL = '';
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -38,12 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
            
+           // const test = await fetch(`/api/asteroids/byName/448818 (2011 UU20)`);
+          //  console.log(test);
+
             //Fetch asteroids by today's date from the server
             const today = new Date();
             const todayFormattedSplit = splitDate(today);
             const adata = await fetch(`${responseURL}/api/asteroids/byDate/${todayFormattedSplit}`);
 
-            //console.log(adata);
+            console.log(adata);
             const asteroidsToday = await adata.json();
 
             //display
@@ -93,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //console.log(`${responseURL}/api/asteroids/${encodeURIComponent(asteroid.name)}`);
 
 
-            const checkResponse = await fetch(`${responseURL}/api/asteroids/${decodeURIComponent(asteroid.name)}`);
+            const checkResponse = await fetch(`${responseURL}/api/asteroids/byName/${decodeURIComponent(asteroid.name)}`);
 
             console.log(checkResponse);
             const existingAsteroids = await checkResponse.json();

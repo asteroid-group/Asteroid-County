@@ -1,31 +1,9 @@
 {
     "version": 2,
-    "builds": [
+    "rewrites": [
       {
-        "src": "server.js",  
-        "use": "@vercel/node"
-      },
-      {
-        "src": "public/**/*",  
-        "use": "@vercel/static"
+        "source": "/(.*)",
+        "destination": "/api"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/asteroids/(.*)",
-        "dest": "/api/asteroids/:1"
-      },
-      {
-        "src": "/api/asteroids/byDate/(.*)",
-        "dest": "/api/asteroids/byDate/:1"
-      },
-      {
-        "src": "/(.*)",  
-        "dest": "/public/$1"
-      }
-    ],
-    "env": {
-      "POSTGRES_URL": "postgres://default:xuTf1o3KZdWv@ep-curly-bird-a40i2io5-pooler.us-east-1.aws.neon.tech/verceldb?sslmode=require"
-     
-    }
+    ]
   }

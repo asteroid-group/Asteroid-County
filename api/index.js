@@ -1,10 +1,12 @@
+console.log('Vercel server is running...');
+
 const express = require('express');
 const cors = require('cors'); // Import the cors middleware
-const { PrismaClient } = require('./generated/client');
+const { PrismaClient } = require('../generated/client');
 
 const prisma = new PrismaClient();
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4001;
 const POSTGRES_URL = process.env.POSTGRES_URL;
 
 // Use the cors middleware
@@ -13,8 +15,14 @@ app.use(cors());
 app.use(express.json());
 
 
+app.get("/api", (req, res) => res.send("Express on Vercel"));
 
-app.get('/api/asteroids/:name', async (req, res) => {
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+
+module.exports = app;
+
+
+app.get('/api/asteroids/byName/:name', async (req, res) => {
     try {
       const { name } = req.params;
       console.log('Decoded Name:', decodeURIComponent(name));
@@ -45,10 +53,7 @@ app.get('/api/asteroids/:name', async (req, res) => {
     return `${year}-${month}-${day}`;
 }
 
-// Function to remove time and GMT offset from the date
-function removeTimeAndOffset(dateString) {
-    return dateString.split(' ').slice(0, 4).join(' ');
-}
+
 
 
 // Function to remove time and GMT offset from the date
@@ -112,22 +117,3 @@ app.delete('/api/asteroids', async (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-
-  const startServer = async () => {
-    try {
-      if (!POSTGRES_URL) {
-        throw new Error('Missing POSTGRES_URL environment variable. Make sure to set it.');
-      }
-  
-      await prisma.$connect();
-  
-      app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-      });
-    } catch (error) {
-      console.error('Error during server startup:', error);
-      process.exit(1); // Exit the process in case of an error during startup
-    }
-  };
-  
-  startServer();
