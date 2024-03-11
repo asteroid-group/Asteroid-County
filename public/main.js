@@ -1,10 +1,7 @@
 let responseURL;
-/*
+//for testing
+//responseURL = 'http://localhost:4001';
 
-  // for testing
-  responseURL = 'http://localhost:3000';
-}
-*/
 responseURL = '';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -158,18 +155,40 @@ document.addEventListener('DOMContentLoaded', function() {
             button.textContent = asteroid.name;
             button.dataset.asteroidId = asteroid.id;
             button.addEventListener("click", function() {
-                displayAsteroidInfo(asteroid);
+                displayAsteroidInfo(asteroidsArray,asteroid.id);
             });
             asteroidButtons.appendChild(button);
+
         }
     }
 
 
-
     //function to display detailed asteroid information
-    function displayAsteroidInfo(asteroid) {
+    function displayAsteroidInfo(asteroidsArray, aid) {
+        document.getElementById("loading-message2").style.display = "none";
         const asteroidsInfo = document.getElementById("asteroids-info");
-        asteroidsInfo.innerHTML = `<p>Name: ${asteroid.name}<br>Close approach date and time:<br>${asteroid.close_approach_data[0].close_approach_date_full} <br>Diameter Min: ${asteroid.estimated_diameter.meters.estimated_diameter_min} meters<br>Diameter Max: ${asteroid.estimated_diameter.meters.estimated_diameter_max} meters<br>Potentially hazardous?: ${asteroid.is_potentially_hazardous_asteroid}<br>Velocity: ${asteroid.close_approach_data[0].relative_velocity.kilometers_per_hour} km per hour</p>`;
+
+        const asteroid = asteroidsArray.find(ast => ast.id === aid);
+        
+        if(asteroid){
+    
+              // Item found, return its information
+              asteroidsInfo.innerHTML = `
+              Name: ${asteroid.name}<br> ${asteroid.id} <br> ${asteroid.absolute_magnitude_h}`;
+              //
+              // its ugly rn lol im sorry 
+             // Close approach date and time: ${asteroid.close_approach_data[0]?.close_approach_date_full || "N/A"}<br>
+              //Diameter Min: ${asteroid.estimated_diameter.meters?.estimated_diameter_min || "N/A"} meters<br>
+              //Diameter Max: ${asteroid.estimated_diameter.meters?.estimated_diameter_max || "N/A"} meters<br>
+              //Potentially hazardous?: ${asteroid.is_potentially_hazardous_asteroid}<br>
+              //Velocity: ${asteroid.close_approach_data[0]?.relative_velocity.kilometers_per_hour || "N/A"} km per hour`;   \\    
+               }
+            
+        else
+        {
+            asteroidsInfo.innerHTML = "<p>Asteroid information not found.<br> Please try again later.</p>"
+        }
+
     }
 
     //execute the API call function after the page has loaded
