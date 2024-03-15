@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
            
+
+            //make nasa api call
+            nasaAPICall();
+            
            // const test = await fetch(`/api/asteroids/byName/448818 (2011 UU20)`);
           //  console.log(test);
 
@@ -49,9 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
             //display
             displayAsteroidNames(asteroidsToday);
 
-            //deleteAllAsteroids()
-            //make nasa api call
-            nasaAPICall();
+            
+            
 
         } catch (error) {
             console.error("Error fetching data:", error);
