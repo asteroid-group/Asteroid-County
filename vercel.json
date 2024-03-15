@@ -5,5 +5,13 @@
         "source": "/(.*)",
         "destination": "/api"
       }
+    ],
+    "crons": [
+      {
+        "path": "/api/nasaCall",
+        "schedule": "0 * * * *"
+      }
     ]
+
+    
   }

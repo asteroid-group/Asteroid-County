@@ -1,8 +1,13 @@
 let responseURL;
 //for testing
 //responseURL = 'http://localhost:4001';
+//empty for deployment
+
+
 
 responseURL = '';
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -44,8 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
             //display
             displayAsteroidNames(asteroidsToday);
 
+            //deleteAllAsteroids()
             //make nasa api call
-            nasaAPICall();
+            //nasaAPICall();
 
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -80,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    
 
     async function saveAsteroidToDatabase(asteroid) {
         try {
@@ -172,16 +177,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if(asteroid){
     
-              // Item found, return its information
+              //item found, return its information
               asteroidsInfo.innerHTML = `
-              Name: ${asteroid.name}<br> ${asteroid.id} <br> ${asteroid.absolute_magnitude_h}`;
-              //
-              // its ugly rn lol im sorry 
-             // Close approach date and time: ${asteroid.close_approach_data[0]?.close_approach_date_full || "N/A"}<br>
-              //Diameter Min: ${asteroid.estimated_diameter.meters?.estimated_diameter_min || "N/A"} meters<br>
-              //Diameter Max: ${asteroid.estimated_diameter.meters?.estimated_diameter_max || "N/A"} meters<br>
-              //Potentially hazardous?: ${asteroid.is_potentially_hazardous_asteroid}<br>
-              //Velocity: ${asteroid.close_approach_data[0]?.relative_velocity.kilometers_per_hour || "N/A"} km per hour`;   \\    
+              Name: ${asteroid.name}<br> 
+              Close Approach Date: ${asteroid.closeApproachDate} <br> 
+              Diameter Min: ${asteroid.diameterMin} <br> 
+              Diameter Max: ${asteroid.diameterMax} <br> 
+              Velocity: ${asteroid.velocity} <br> 
+              Potentially Hazardous?: ${asteroid.potentiallyHazardous} <br> 
+              `;
+              //it wasnt working cuz the asteroids are being saved in our database differently than how they are being retrieved from nasa cuz we just want the important stuff lol
+              //schema.prisma has how the asteroids are being saved
                }
             
         else
@@ -190,6 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     }
+    
 
     //execute the API call function after the page has loaded
     window.onload = databaseAPICall;
