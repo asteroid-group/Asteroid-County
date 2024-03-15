@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             //deleteAllAsteroids()
             //make nasa api call
-            //nasaAPICall();
+            nasaAPICall();
 
         } catch (error) {
             console.error("Error fetching data:", error);
