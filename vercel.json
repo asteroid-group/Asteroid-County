@@ -10,12 +10,7 @@
       {
         "path": "/api/nasaCall",
         "schedule": "0 0 * * *"
-      },
-      {
-        "path": "/api/nasaCall",
-        "schedule": "0 12 * * *"
-      }
+      } 
     ]
-
     
   }
