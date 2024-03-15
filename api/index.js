@@ -6,7 +6,7 @@ const { PrismaClient } = require('../generated/client');
 
 //for testing
 //responseURL = 'http://localhost:4001';
-let responseURL = '';
+let responseURL = 'https://asteroid-county.vercel.app';
 
 const prisma = new PrismaClient();
 const app = express();
