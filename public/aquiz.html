@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Asteroid County</title>
+    <title>Asteroid City</title>
+    <script src="qmain.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js" defer></script>
 </head>
 <body>
+    <header>
     <h1>Asteroid County</h1>
     <h3>Quiz Your Knowledge!</h3>
     <div class="topnav">
@@ -15,9 +20,103 @@
         <a class="active" href="aquiz.html"> "Do You Know...?"</a>
         <a href="aboutus.html"> "Who...?"</a>
     </div>
+    </header>
 
-    <div class="container">
-        <p>quiz here</p>
+    <br>
+    <br>
+
+    <!--starting screen-->
+    <div id = "intro-container" class = "intro-container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body" style = "text-align: center;">
+                      <b>HEY. YOU.</b> DO YOU KNOW ABOUT ASTEROIDS? DO YOU WANNA BE OUR MAYOR?
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <h3 id = "startq" class="card-title" style = "text-align: center;">
+                    Can you earn the Key to the City?
+                    </h3>
+                    <div style ="text-align: center;">
+                     <button onclick= "startQuiz()">Yes!</button>
+                    </div>
+                    </div>
+            </div>
+        </div>     
     </div>
+
+    <!--actual quiz-->
+    <div  id="quiz-container" class="quiz-container">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body" style = "text-align: center;">
+                      <div id="results"></div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                <div id="questionNum"></div>
+                <br>
+                <div id="question"></div>
+                <br>
+                <div id="options"></div>
+                <br>
+                <button onclick="nextQuestion()">Next</button>
+                    </div>
+                    </div>
+            </div>
+        </div>     
+    </div>
+
+    <!--results page-->
+    <div  id="result-container" class="result-container">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="card" style = "text-align: center;">
+                <div id="Fresults"></div>
+                <div id="message"></div>
+                <button onclick="tryAgain()">Try Again?</button>
+                </div>
+                </div>
+            </div>
+        </div>     
+    </div>
+
+<footer>
+    
+</footer>
+
+
 </body>
 </html>

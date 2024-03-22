@@ -1,7 +1,10 @@
 body{
 	margin:0;
 	background-color: mediumturquoise;
+  padding-bottom:30px;
 }
+
+
 h1
 {
 	text-align: center;
@@ -108,4 +111,58 @@ h3
 #map {
   height: 100%; 
   width: 100%; 
+}
+
+
+#score-card-t
+{
+  text-align: center;
+	font-family:'Courier New', Courier, monospace;
+	font-weight: bold;
+  font-size: 15px;
+  color: black;
+	padding-top: none;
+	background-color: white;
+	text-shadow: none;
+}
+
+#startq{
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    padding-top: none;
+    background-color: white;
+    text-shadow: none;
+}
+
+.card
+{
+	background-color: #fffef9;
+    padding: 5%;
+}
+.intro-container, .quiz-container, .result-container
+{
+	font-family: 'Courier New', Courier, monospace;
+
+}
+
+.quiz-container {
+	display: none;
+}
+
+.result-container{
+	display:none;
+}
+
+#results, #Fresults
+{
+	font-weight: bold;
+}
+
+#Fresults
+{
+	text-align:center;
+
 }
