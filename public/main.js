@@ -181,13 +181,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if(asteroid){
     
               //item found, return its information
-              asteroidsInfo.innerHTML = `
-              Name: ${asteroid.name}<br> 
-              Close Approach Date: ${asteroid.closeApproachDate} <br> 
-              Diameter Min: ${asteroid.diameterMin} <br> 
-              Diameter Max: ${asteroid.diameterMax} <br> 
-              Velocity: ${asteroid.velocity} <br> 
-              Potentially Hazardous?: ${asteroid.potentiallyHazardous} <br> 
+              asteroidsInfo.innerHTML = `<br>
+              <b>Name:</b> ${asteroid.name}<br> 
+              <b>Close Approach Date:</b> ${asteroid.closeApproachDate} <br> 
+              <b>Diameter Min: </b> ${asteroid.diameterMin} meters <br> 
+              <b>Diameter Max:</b> ${asteroid.diameterMax} meters<br> 
+              <b>Velocity:</b> ${asteroid.velocity} km/h<br> 
+              <b>Potentially Hazardous?</b>: ${asteroid.potentiallyHazardous} <br> 
               `;
               //it wasnt working cuz the asteroids are being saved in our database differently than how they are being retrieved from nasa cuz we just want the important stuff lol
               //schema.prisma has how the asteroids are being saved

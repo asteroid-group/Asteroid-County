@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Asteroid County</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
     
@@ -25,28 +29,85 @@
     <header>
     <h1>Asteroid County</h1>
     <h3>Impact Simulator</h3>
+    </header>
+
     <div class="topnav">
         <a href="index.html">Who's there...?</a>
         <a class="active" href="impacts.html"> "What if..?"</a>
         <a href="aquiz.html"> "Do You Know...?"</a>
         <a href="aboutus.html"> "Who...?"</a>
     </div>
-    </header>
 
-    <div class="float-parent-element">
-        <div class="float-child-element">
+    <div class="container" id="cont-impacts">
+        <div class="sidebar" id="pick_route"> 
+            <br>
+            <br>
+            <br>
+            <p id ="welcome-i">Hello! Let's make an Impact :)</p> 
+            <button onclick= "makeAstro()">Make My Own</button>
+            <br>
+            <br>
+            <button onclick= "pickAstro()">Pick an Asteroid</button>
+        </div>
+
+        <div class="sidebar" id="make_Astro"> 
+            <br>
+            <br>
+            <br>
+            <p id ="welcome-i">Make an Asteroid!</p>
+            <form id="createAstro">
+                
+                <label for="diameter">Diamter (meters):</label>
+                <input type="number" id="diameter" name="diameter" min = "2" max= "914000" required>
+                <br>
+                <br>
+                <label for="speed">Speed (kp/s):</label>
+                <input type="number" id="speed" name="speed" min = "11" max = "73" required>
+                <br>
+                <br>
+                <label for="angle">Angle(2 - 90):</label>
+                <input type="number" id="angle" name="angle" min="2" max="90" required>
+                <br>
+                <br>
+                <!--for now we will use default density of the three main type: C = 1.39, S = 2.71, M = 5.32 g/cm^3-->
+                <label for="astro_class">Asteroid Class:</label>
+                <select id="astro_class">
+                    <option value="c">C-Class</option>
+                    <option value="s">S-Class</option>
+                    <option value="m">M-Class</option>
+                </select>
+                <br>
+                <br>
+                <input type="submit" value="LAUNCH">
+            </form>
+            
+            <div id="astroresults"></div>
+
+        </div>
+
+        <div class="sidebar" id="pick_Astro"> 
             <div class="sidebar" id="loading-message"> Loading...</div>
             <div class="sidebar" id="asteroid-buttons"></div>
         </div>
-        <div class="float-child-element">
-            <div class="fullinfo"> 
+
+
+
+        <!--
+  
+    -->
+            
+        <div class="fullinfo"> 
                 big explosion here
                 <!-- Ensure that the map container has sufficient height and width -->
-                <div id="map-container">
-                    <div id="map" style="height: 500px; width: 100%;"></div>
-                </div>
+            <div id="map-container">
+                <div id="map" style="height: 500px; width: 100%;"></div>
             </div>
         </div>
+     
     </div>
+</div>
+    <footer>
+    
+    </footer>
 </body>
 </html>

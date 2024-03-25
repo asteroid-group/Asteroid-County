@@ -1,7 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header 
+{
+    width: 100%;
+    background-color:  mediumturquoise;
+    padding: 10px;
+  
+}
 body{
 	margin:0;
-	background-color: mediumturquoise;
-  padding-bottom:30px;
+  padding: 0;
+	background-color: #CC6600;
 }
 
 
@@ -53,18 +66,21 @@ h3
   color: black;
 }
 
+/* for asteroids/home page AND impacts */
 .sidebar
-{   font-family: Courier,monospace;
-	width:28vw;
+{ font-family: Courier,monospace;
+	width:19vw;
 	height:60vw;
 	overflow-x: hidden;
   overflow-y: auto;
+  align-items: center;
   text-align: center;
 	background-color:#CC6600;
 }
 
 .fullinfo
-{ font-family: Courier,monospace;
+{ flex:1;
+  font-family: Courier,monospace;
 	text-align:center;
 	width:79vw;
 	height:60vw;
@@ -102,6 +118,31 @@ h3
   color:#ddd;
 
 }
+/* for end for asteroids and impacts */
+
+/* impacts.html for impact page  */
+#cont-impacts{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%
+}
+
+#make_Astro
+{
+  display: none;
+}
+
+#pick_Astro
+{
+  display: none;
+}
+
+#welcome-i
+{
+  font-size: 20px;
+  color:black;
+
+}
 
 #map-container {
   position: relative; 
@@ -112,8 +153,9 @@ h3
   height: 100%; 
   width: 100%; 
 }
+/* end for impact simulator */
 
-
+/* aquiz.html for quiz */
 #score-card-t
 {
   text-align: center;
@@ -140,7 +182,7 @@ h3
 .card
 {
 	background-color: #fffef9;
-    padding: 5%;
+  padding: 5%;
 }
 .intro-container, .quiz-container, .result-container
 {
@@ -166,3 +208,4 @@ h3
 	text-align:center;
 
 }
+/* end for quiz */

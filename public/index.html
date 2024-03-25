@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Asteroid County</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
 </head>
@@ -10,23 +14,24 @@
     <header>
     <h1>Asteroid County</h1>
     <h3>Near Earth Objects Today</h3>
+    </header>
     <div class="topnav">
         <a class="active" href="index.html">Who's there...?</a>
         <a href ="impacts.html"> "What if..?"</a>
         <a href="aquiz.html"> "Do You Know...?"</a>
         <a href="aboutus.html"> "Who...?"</a>
     </div>
-    </header>
 
-    <div class="float-parent-element">
-        <div class="float-child-element">
+    <div class="container" id = "cont-impacts">
             <div class="sidebar" id="loading-message"> Loading...</div>
             <div class="sidebar" id="asteroid-buttons"></div>
-        </div>
-        <div class="float-child-element">
-            <div class="fullinfo" id="loading-message2"> <br><br> <b>Please select an asteroid to learn more!</b></div>
+
+            <div class="fullinfo" id="loading-message2"><b>Please select an asteroid to learn more!</b></div>
             <div class="fullinfo" id="asteroids-info"></div>
-        </div>
     </div>
+
+    <footer>
+    
+    </footer>
 </body>
 </html>
