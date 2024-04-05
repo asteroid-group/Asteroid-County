@@ -1,12 +1,48 @@
 let map;
+let userLocationCircle;
 
 async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
+  const { Map, Circle } = await google.maps.importLibrary("maps");
 
   map = new Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
     zoom: 8,
+    center: { lat: -25.344, lng: 131.036 }, //default location in Australia for no reason
     mapId: "ec6fca8dcb15bcb7"
+  });
+
+  //try HTML5 geolocation
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        map.setCenter(pos);
+        addRadius(pos);
+      },
+      () => {
+        //if user denies or if geolocation fails keep the default location
+        map.setCenter({ lat: -25.344, lng: 131.036 });
+      }
+    );
+  } else {
+     //again, if user denies or if geolocation fails keep the default location
+    map.setCenter({ lat: -25.344, lng: 131.036 });
+  }
+}
+
+function addRadius(center) {
+  userLocationCircle = new google.maps.Circle({
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
+    map: map,
+    center: center,
+    radius: 10000, // Set the radius in meters (e.g., 10000 meters = 10 kilometers)
   });
 }
 
