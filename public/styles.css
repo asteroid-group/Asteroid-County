@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: rustica;
+  src: url(./fonts/Rustica.ttf);
+}
+
+@font-face{
+  font-family: bmspa;
+  src: url(./fonts/BMSPA___.TTF);
+}
+
+@font-face{
+  font-family: regspace;
+  src: url(./fonts/a_space/A-Space\ Regular\ Demo.otf)
+}
+
 header 
 {
     width: 100%;
@@ -21,24 +36,24 @@ body{
 h1
 {
 	text-align: center;
-	font-family: Trebuchet MS, sans-serif;
-  font-style:italic;
-	font-weight: bolder;
-	font-size: 70px;
-	padding-top: 30px;
+	font-family: rustica;
+	font-size: 80px;
+  letter-spacing: 3px;
+	padding-top: 20px;
 	color: #F6BE00;
 	background-color:mediumturquoise;
-	text-shadow: -3px 3px #8B0000;
+	text-shadow: -4px 5px #8B0000;
 }
-h3
+
+#subtitle
 {
 	text-align: center;
-	font-family: Trebuchet MS, sans-serif;
-	font-weight: bold;
+	font-family: rustica;
 	font-size: 30px;
+  letter-spacing: 3px;
 	color: #F6BE00;
 	background-color:mediumturquoise;
-	text-shadow: -3px 3px #8B0000;
+	text-shadow: -1px 3px #8B0000;
 }
 
 .topnav {
@@ -47,7 +62,7 @@ h3
 }
 
 .topnav a {
-  font-family: Courier,monospace;
+  font-family: regspace;
   float: left;
   color: black;
   text-align: center;
@@ -57,7 +72,7 @@ h3
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #7d2d02;
   color: black;
 }
 
@@ -68,55 +83,56 @@ h3
 
 /* for asteroids/home page AND impacts */
 .sidebar
-{ font-family: Courier,monospace;
+{ font-family: bmspa;
 	width:19vw;
 	height:60vw;
 	overflow-x: hidden;
   overflow-y: auto;
   align-items: center;
+  justify-content: center;
   text-align: center;
 	background-color:#CC6600;
 }
 
 .fullinfo
 { flex:1;
-  font-family: Courier,monospace;
-	text-align:center;
+  font-family: bmspa;
+	text-align:left;
+  padding: 40px;
 	width:79vw;
 	height:60vw;
 	background-color: ghostwhite;
 }
 
-.float-parent-element { 
-    width: 42%; 
-} 
-.float-child-element { 
-    float: left; 
-    width: 50%; 
-} 
 
 .asteroid-button {
   display: flex;
   flex-direction: column;
   align-items:center;
   justify-content:center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: bmspa;
   font-weight:bold;
+  letter-spacing: 1px;
   width:15vw;
 	height:5vw;
   margin: 10px;
   padding: 10px;
   border: 1px solid #462301;
-  border-radius: 5px;
   cursor: pointer;
-  background-color: #8b00005a;
+  background-color: black;
   color:#ddd;
 }
 
 .asteroid-button:hover {
-  background-color: #8B0000;
-  color:#ddd;
+  background-color: #ffffff;
+  color: black;
 
+}
+
+#astname{
+  font-family:regspace;
+  background-color: ghostwhite;
+  color:black;
 }
 /* for end for asteroids and impacts */
 
@@ -124,6 +140,9 @@ h3
 #cont-impacts{
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   width: 100%
 }
 
@@ -153,13 +172,28 @@ h3
   height: 100%; 
   width: 100%; 
 }
+
+#miscbutton{
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  font-family: bmspa;
+  font-weight:bold;
+  letter-spacing: 1px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #462301;
+  cursor: pointer;
+  background-color: black;
+  color:#ddd;
+}
 /* end for impact simulator */
 
 /* aquiz.html for quiz */
 #score-card-t
 {
   text-align: center;
-	font-family:'Courier New', Courier, monospace;
+	font-family:regspace;
 	font-weight: bold;
   font-size: 15px;
   color: black;
@@ -170,8 +204,7 @@ h3
 
 #startq{
     text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-family:regspace;
     font-size: 30px;
     color: black;
     padding-top: none;
@@ -184,9 +217,9 @@ h3
 	background-color: #fffef9;
   padding: 5%;
 }
-.intro-container, .quiz-container, .result-container
+.intro-container, .quiz-container, .result-container, .source-container
 {
-	font-family: 'Courier New', Courier, monospace;
+	font-family: regspace;
 
 }
 
@@ -208,4 +241,30 @@ h3
 	text-align:center;
 
 }
+
+#tostudy{
+	text-align:right;
+	font-family: bmspa;
+
+}
+
+#link
+{
+	color:white;
+	font-weight: bold;
+}
+
+#links
+{
+	color:black;
+	font-weight: bold;
+}
+
+#cityk
+{
+	width: auto; 
+    height: 100px;
+}
+
+
 /* end for quiz */

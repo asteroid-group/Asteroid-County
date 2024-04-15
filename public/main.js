@@ -1,11 +1,11 @@
 let responseURL;
 //for testing
-//responseURL = 'http://localhost:4001';
+responseURL = 'http://localhost:4001';
 //empty for deployment
 
 
 
-responseURL = '';
+//responseURL = '';
 
 
 
@@ -182,12 +182,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
               //item found, return its information
               asteroidsInfo.innerHTML = `<br>
-              <b>Name:</b> ${asteroid.name}<br> 
-              <b>Close Approach Date:</b> ${asteroid.closeApproachDate} <br> 
-              <b>Diameter Min: </b> ${asteroid.diameterMin} meters <br> 
-              <b>Diameter Max:</b> ${asteroid.diameterMax} meters<br> 
-              <b>Velocity:</b> ${asteroid.velocity} km/h<br> 
-              <b>Potentially Hazardous?</b>: ${asteroid.potentiallyHazardous} <br> 
+              <b>Name:</b> 
+              <br>
+              <h3 id="astname">${asteroid.name}</h3>
+              <br>
+              <br> 
+              <b>Close Approach Date:</b> ${asteroid.closeApproachDate} 
+              <br>
+              <br>
+              <b>Diameter Min: </b> ${asteroid.diameterMin} meters 
+              <br>
+              <br> 
+              <b>Diameter Max:</b> ${asteroid.diameterMax} meters
+              <br>
+              <br> 
+              <b>Velocity:</b> ${asteroid.velocity} km/h
+              <br>
+              <br> 
+              <b>Potentially Hazardous?</b>: ${asteroid.potentiallyHazardous} 
+              <br>
+              <br> 
               `;
               //it wasnt working cuz the asteroids are being saved in our database differently than how they are being retrieved from nasa cuz we just want the important stuff lol
               //schema.prisma has how the asteroids are being saved

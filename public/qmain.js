@@ -3,7 +3,7 @@ var questions = [
     //1
     {
         question: "What is another name for asteroids?",
-        options: ["Minor planet", "Dwarf Planet", "Cousing Planet", "A silly little guy"],
+        options: ["Minor planet", "Dwarf Planet", "Cousin Planet", "A silly little guy"],
         correctAnswer: "Minor planet"
     },
     //2
@@ -85,6 +85,8 @@ function startQuiz() {
     document.getElementById('intro-container').style.display = 'none';
     document.getElementById('result-container').style.display = 'none';
     document.getElementById('quiz-container').style.display = 'block';
+    var studyElement = document.getElementById('tostudy');
+    studyElement.innerHTML="";
     questions = shuffleArray(questions);
     displayQuestion();
 }
@@ -131,16 +133,30 @@ function nextQuestion() {
        fresultElement.innerHTML = `<h2>Final Score: ${score}/10!</h2>`;
        if (score === 10)
        {
-        messageElement.innerHTML = `<p>Hooray!!! You are our new Mayor! Here is the key to the city!</p>`
+        messageElement.innerHTML =
+        `<h4><b>Asteroid City Mayor!</b></h4>
+        <p>Hooray!!! Here is the key to the city!</p>
+        <a href="./images/award.jpg" target="_blank"><img id = "cityk" src="./images/cityk.jpg" alt="The City Key"></a>
+        <p> click the key!</p>`
+
        }
-       else if( 5 < score && score < 10)
-       {
-        messageElement.innerHTML = `<p>So close!!</p>`
-       }
-       else
-       {
-        messageElement.innerHTML = `<p>Better luck next time!</p>`
-       }
+       else{
+        var studyElement = document.getElementById('tostudy');
+        studyElement.innerHTML= `<a id = "link" href="study.html" text-align:right ><i>Pssst..study time???</i></a>`;   
+
+        if( score >= 8  && score <= 9)
+        {
+         messageElement.innerHTML = `<h4><b>Asteroid Ranger</b></h4><p>Almost!!</p><hr>`  
+        }
+        else if( score >= 6 && score <= 7)
+        {
+        messageElement.innerHTML = `<h4><b>Asteroid Citizen</b></h4><p>So close!!</p><hr>`
+        }
+        else
+        {
+        messageElement.innerHTML = `<h4><b>Asteroid Student</b></h4><p>Better luck next time!</p><hr>`
+        }
+    }
 
     }
 }
