@@ -83,7 +83,7 @@ h1
 
 /* for asteroids/home page AND impacts */
 .sidebar
-{ font-family: bmspa;
+{ font-family: regspace;
 	width:19vw;
 	height:60vw;
 	overflow-x: hidden;
@@ -96,12 +96,12 @@ h1
 
 .fullinfo
 { flex:1;
-  font-family: bmspa;
+  font-family: regspace;
 	text-align:left;
   padding: 40px;
 	width:79vw;
 	height:60vw;
-	background-color: ghostwhite;
+	background-color: rgb(34, 71, 91);
 }
 
 
@@ -110,7 +110,7 @@ h1
   flex-direction: column;
   align-items:center;
   justify-content:center;
-  font-family: bmspa;
+  font-family: regspace;
   font-weight:bold;
   letter-spacing: 1px;
   width:15vw;
@@ -177,7 +177,7 @@ h1
   flex-direction: column;
   align-items:center;
   justify-content:center;
-  font-family: bmspa;
+  font-family: regspace;
   font-weight:bold;
   letter-spacing: 1px;
   margin: 10px;
@@ -198,7 +198,6 @@ h1
   font-size: 15px;
   color: black;
 	padding-top: none;
-	background-color: white;
 	text-shadow: none;
 }
 
@@ -208,13 +207,12 @@ h1
     font-size: 30px;
     color: black;
     padding-top: none;
-    background-color: white;
     text-shadow: none;
 }
 
 .card
 {
-	background-color: #fffef9;
+	background-color: #ebdc95;
   padding: 5%;
 }
 .intro-container, .quiz-container, .result-container, .source-container
@@ -244,7 +242,7 @@ h1
 
 #tostudy{
 	text-align:right;
-	font-family: bmspa;
+	font-family: regspace;
 
 }
 
@@ -268,3 +266,13 @@ h1
 
 
 /* end for quiz */
+
+.about-container
+{
+  font-family: regspace;
+}
+
+#about-card
+{
+  background-color: tan;
+}
