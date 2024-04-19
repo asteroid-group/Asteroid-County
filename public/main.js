@@ -1,11 +1,11 @@
 let responseURL;
 //for testing
-//responseURL = 'http://localhost:4001';
+responseURL = 'http://localhost:4001';
 //empty for deployment
 
 
 
-responseURL = '';
+//responseURL = '';
 
 
 
@@ -181,7 +181,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if(asteroid){
               //FUNCTION CALL FOR SIMULATION
               //default values
-              simulateImpact((asteroid.diameterMin+asteroid.diameterMax)/2,asteroid.velocity,45,1.38)
+              if (typeof simulateImpact === 'function') {
+            // Default values
+            simulateImpact((asteroid.diameterMin + asteroid.diameterMax) / 2, asteroid.velocity, 45, 1.38);
+        }
 
               //item found, return its information
               asteroidsInfo.innerHTML = `<br>
