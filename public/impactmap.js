@@ -1,16 +1,18 @@
 let map;
 let userLocationCircle;
 
+let drawnRadius = 0;
+
 async function initMap() {
   const { Map, Circle } = await google.maps.importLibrary("maps");
 
   map = new Map(document.getElementById("map"), {
     zoom: 8,
-    center: { lat: -25.344, lng: 131.036 }, //default location in Australia for no reason
+    center: { lat: -25.344, lng: 131.036 },
     mapId: "ec6fca8dcb15bcb7"
   });
 
-  //try HTML5 geolocation
+  // HTML5 geolocation
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -23,12 +25,10 @@ async function initMap() {
         addRadius(pos);
       },
       () => {
-        //if user denies or if geolocation fails keep the default location
         map.setCenter({ lat: -25.344, lng: 131.036 });
       }
     );
   } else {
-     //again, if user denies or if geolocation fails keep the default location
     map.setCenter({ lat: -25.344, lng: 131.036 });
   }
 }
@@ -42,59 +42,66 @@ function addRadius(center) {
     fillOpacity: 0.35,
     map: map,
     center: center,
-    radius: 10000, // Set the radius in meters (e.g., 10000 meters = 10 kilometers)
+    radius: drawnRadius,
   });
 }
 
 initMap();
 
+function updateRadius(radius) {
+  userLocationCircle.setRadius(radius);
+}
 
-function makeAstro()
-{
+function makeAstro() {
   document.getElementById('pick_route').style.display = 'none';
   document.getElementById('make_Astro').style.display = 'block';
 }
 
-function pickAstro()
-{
+function pickAstro() {
   document.getElementById('pick_route').style.display = 'none';
   document.getElementById('pick_Astro').style.display = 'block';
 }
+
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('createAstro').addEventListener('submit', function(event) {
-      event.preventDefault(); 
-      
-      var adiameter = parseInt(document.getElementById('diameter').value);
-      var aspeed = parseInt(document.getElementById('speed').value);
-      var aangle = parseInt(document.getElementById('angle').value);
-      var asteroidClass = document.getElementById('astro_class').value;
-      var density = 0;
+    event.preventDefault();
 
-      if (asteroidClass === "c")
-      {
-        density = 1.38;
-      }
-      else if (asteroidClass === "s")
-      {
-        density = 2.71;
-      }
-      else if(asteroidClass === "m")
-      {
-        density = 5.32;
-      }
+    var adiameter = parseInt(document.getElementById('diameter').value);
+    var aspeed = parseInt(document.getElementById('speed').value);
+    var aangle = parseInt(document.getElementById('angle').value);
+    var asteroidClass = document.getElementById('astro_class').value;
+    var density = 0;
+
+    if (asteroidClass === "c") {
+      density = 1.38;
+    } else if (asteroidClass === "s") {
+      density = 2.71;
+    } else if (asteroidClass === "m") {
+      density = 5.32;
+    }
+
+    simulateImpact(adiameter, aspeed, aangle, density);
     
-      
-      simulateImpact(adiameter, aspeed, aangle, density);
-      
-      this.reset();
+    
+
+    this.reset();
   });
 });
 
-function simulateImpact(adiameter, aspeed, aangle, density)
-{
+
+
+function simulateImpact(adiameter, aspeed, aangle, density) {
   var astroElement = document.getElementById('astroresults');
 
-  astroElement.innerHTML = `<p>Chosen:<br> Diameter: ${adiameter} meters <br> Speed: ${aspeed} km/s<br>Angle: ${aangle} degrees <br>Density: ${density} g/cm^3` 
+  astroElement.innerHTML = `<p>Chosen:<br> Diameter: ${adiameter} meters <br> Speed: ${aspeed} km/s<br>Angle: ${aangle} degrees <br>Density: ${density} g/cm^3`;
 
- // math goes here ~  tbd
+  // Math goes here ~ TBD
+  // updates drawn radius, no math yet its just updated based on the asteroid's radius
+
+
+  drawnRadius = adiameter;
+  // Update the radius
+  updateRadius(adiameter);
 }
+
+

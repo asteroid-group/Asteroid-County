@@ -179,7 +179,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const asteroid = asteroidsArray.find(ast => ast.id === aid);
         
         if(asteroid){
-    
+              //FUNCTION CALL FOR SIMULATION
+              //default values
+              simulateImpact((asteroid.diameterMin+asteroid.diameterMax)/2,asteroid.velocity,45,1.38)
+
               //item found, return its information
               asteroidsInfo.innerHTML = `<br>
               <b>Name:</b> 
@@ -205,6 +208,9 @@ document.addEventListener('DOMContentLoaded', function() {
               `;
               //it wasnt working cuz the asteroids are being saved in our database differently than how they are being retrieved from nasa cuz we just want the important stuff lol
               //schema.prisma has how the asteroids are being saved
+
+
+              
                }
             
         else
@@ -214,7 +220,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
     
+    
 
+    
     //execute the API call function after the page has loaded
     window.onload = databaseAPICall;
 });
