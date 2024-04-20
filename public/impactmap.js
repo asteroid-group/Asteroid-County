@@ -1,7 +1,6 @@
 let map;
 let userLocationCircle;
 
-let drawnRadius = 0;
 
 async function initMap() {
   const { Map, Circle } = await google.maps.importLibrary("maps");
@@ -42,7 +41,7 @@ function addRadius(center) {
     fillOpacity: 0.35,
     map: map,
     center: center,
-    radius: drawnRadius,
+    radius: 0, //measured in meters
   });
 }
 
@@ -93,15 +92,22 @@ document.addEventListener('DOMContentLoaded', function() {
 function simulateImpact(adiameter, aspeed, aangle, density) {
   var astroElement = document.getElementById('astroresults');
 
-  astroElement.innerHTML = `<p>Chosen:<br> Diameter: ${adiameter} meters <br> Speed: ${aspeed} km/s<br>Angle: ${aangle} degrees <br>Density: ${density} g/cm^3`;
+  // Constants
+  var pi = 2600; // Density of Earth's crust in kg/m³
+  var gE = 9.8; // Gravity on Earth in m/s²
+  var constant = 1.161; // Constant for solid rock targets
 
-  // Math goes here ~ TBD
-  // updates drawn radius, no math yet its just updated based on the asteroid's radius
+  // Convert density to kg/m³
+  density = density / 1000; // Convert g/m³ to kg/m³
 
 
-  drawnRadius = adiameter;
-  // Update the radius
-  updateRadius(adiameter);
+  // Calculate diameter in meters
+  var L = adiameter * Math.sin(aangle); // Diameter after entering atmosphere
+  var D = constant * Math.pow((pi * density * L * Math.pow(aspeed, 2) * Math.pow(gE, -0.22) * Math.sin(aangle)), 1/3);
+
+  // Update the radius in meters
+  var drawRadius = D / 2;
+  updateRadius(drawRadius);
 }
 
 
