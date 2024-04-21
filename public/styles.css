@@ -19,6 +19,37 @@
   src: url(./fonts/a_space/A-Space\ Regular\ Demo.otf)
 }
 
+@font-face {
+  font-family: country;
+  src: url(./fonts/CountryGold.ttf);
+}
+
+@font-face {
+  font-family: typewriter;
+  src: url(./fonts/TypewriterRusticRNH-Regular.otf);
+}
+
+@font-face {
+  font-family: want;
+  src: url(./fonts/Wanted\ M54.ttf);
+}
+
+@font-face {
+  font-family: wantyo;
+  src: url(./fonts/Wantedo.ttf);
+}
+
+@font-face {
+  font-family: rusticr;
+  src: url(./fonts/Rustic\ Revolution.otf);
+}
+
+@font-face {
+  font-family: western;
+  src: url(./fonts/WEST____.TTF);
+}
+
+
 header 
 {
     width: 100%;
@@ -62,9 +93,9 @@ h1
 }
 
 .topnav a {
-  font-family: regspace;
+  font-family: want;
   float: left;
-  color: black;
+  color: rgb(58, 46, 33);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -73,17 +104,17 @@ h1
 
 .topnav a:hover {
   background-color: #7d2d02;
-  color: black;
+  color: rgb(58, 46, 33)k;
 }
 
 .topnav a.active {
   background-color: #CC6600;
-  color: black;
+  color: rgb(58, 46, 33);
 }
 
 /* for asteroids/home page AND impacts */
 .sidebar
-{ font-family: regspace;
+{ font-family: western;
 	width:19vw;
 	height:60vw;
 	overflow-x: hidden;
@@ -96,12 +127,12 @@ h1
 
 .fullinfo
 { flex:1;
-  font-family: regspace;
+  font-family: typewriter;
 	text-align:left;
   padding: 40px;
 	width:79vw;
 	height:60vw;
-	background-color: rgb(34, 71, 91);
+	background-color:  rgb(214, 179, 134);
 }
 
 
@@ -110,29 +141,29 @@ h1
   flex-direction: column;
   align-items:center;
   justify-content:center;
-  font-family: regspace;
-  font-weight:bold;
+  font-size: 20px;
+  font-family: western;
   letter-spacing: 1px;
   width:15vw;
 	height:5vw;
   margin: 10px;
   padding: 10px;
-  border: 1px solid #462301;
+  border: none;
   cursor: pointer;
-  background-color: black;
-  color:#ddd;
+  background-color:  rgb(58, 46, 33);
+  color:  rgb(217, 207, 195);
 }
 
 .asteroid-button:hover {
-  background-color: #ffffff;
-  color: black;
+  background-color:  rgb(214, 179, 134);
+  color: rgb(58, 46, 33);
 
 }
 
 #astname{
-  font-family:regspace;
-  background-color: ghostwhite;
-  color:black;
+  font-family: western;
+  font-size: 50px;
+  color:rgb(40, 32, 23);
 }
 /* for end for asteroids and impacts */
 
@@ -177,7 +208,7 @@ h1
   flex-direction: column;
   align-items:center;
   justify-content:center;
-  font-family: regspace;
+  font-family: typewriter;
   font-weight:bold;
   letter-spacing: 1px;
   margin: 10px;
@@ -193,7 +224,7 @@ h1
 #score-card-t
 {
   text-align: center;
-	font-family:regspace;
+	font-family:typewriter;
 	font-weight: bold;
   font-size: 15px;
   color: black;
@@ -203,7 +234,7 @@ h1
 
 #startq{
     text-align: center;
-    font-family:regspace;
+    font-family:typewriter;
     font-size: 30px;
     color: black;
     padding-top: none;
@@ -212,12 +243,12 @@ h1
 
 .card
 {
-	background-color: #ebdc95;
+	background-color:  rgb(214, 179, 134);
   padding: 5%;
 }
 .intro-container, .quiz-container, .result-container, .source-container
 {
-	font-family: regspace;
+	font-family: typewriter;
 
 }
 
@@ -269,10 +300,10 @@ h1
 
 .about-container
 {
-  font-family: regspace;
+  font-family: typewriter;
 }
 
 #about-card
 {
-  background-color: tan;
+  background-color: rgb(214, 179, 134);
 }

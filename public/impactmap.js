@@ -6,7 +6,7 @@ async function initMap() {
   const { Map, Circle } = await google.maps.importLibrary("maps");
 
   map = new Map(document.getElementById("map"), {
-    zoom: 8,
+    zoom: 17, //made the zoom closer becaause it was hard to see
     center: { lat: -25.344, lng: 131.036 },
     mapId: "ec6fca8dcb15bcb7"
   });
