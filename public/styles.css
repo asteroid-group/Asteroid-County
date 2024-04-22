@@ -165,6 +165,10 @@ h1
   font-size: 50px;
   color:rgb(40, 32, 23);
 }
+
+#asteroids-info{
+  display:none;
+}
 /* for end for asteroids and impacts */
 
 /* impacts.html for impact page  */
@@ -189,7 +193,7 @@ h1
 
 #welcome-i
 {
-  font-size: 20px;
+  font-size: 30px;
   color:black;
 
 }
@@ -209,6 +213,7 @@ h1
   align-items:center;
   justify-content:center;
   font-family: typewriter;
+  font-size:17px;
   font-weight:bold;
   letter-spacing: 1px;
   margin: 10px;

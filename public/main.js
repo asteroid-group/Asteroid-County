@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //function to display detailed asteroid information
     function displayAsteroidInfo(asteroidsArray, aid) {
         document.getElementById("loading-message2").style.display = "none";
+        document.getElementById("asteroids-info").style.display = "block";
         const asteroidsInfo = document.getElementById("asteroids-info");
 
         const asteroid = asteroidsArray.find(ast => ast.id === aid);
