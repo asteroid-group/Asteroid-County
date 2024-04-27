@@ -219,6 +219,13 @@ h1
   height: 400px; 
 }
 
+#image-container {
+  position: relative; 
+  padding: 40px;
+	height:60vw;
+  background-color:  rgb(214, 179, 134);
+}
+
 #map {
   height: 100%; 
   width: 100%; 
