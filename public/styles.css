@@ -142,7 +142,9 @@ h1
 }
 
 .fullinfo
-{ flex:1;
+{ 
+  
+  flex:1;
   font-family: robertoSlab;
 	text-align:left;
   padding: 40px;
