@@ -6,7 +6,7 @@ async function initMap() {
   const { Map, Circle } = await google.maps.importLibrary("maps");
 
   map = new Map(document.getElementById("map"), {
-    zoom: 17, //made the zoom closer becaause it was hard to see
+    zoom: 12, //made the zoom closer becaause it was hard to see
     center: { lat: -25.344, lng: 131.036 },
     mapId: "ec6fca8dcb15bcb7"
   });
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
     simulateImpact(adiameter, aspeed, aangle, density);
     
     
-
-    this.reset();
+    //seems better if it doesn't reset so you can play with values
+    //this.reset();
   });
 });
 

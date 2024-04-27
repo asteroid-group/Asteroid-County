@@ -49,6 +49,22 @@
   src: url(./fonts/WEST____.TTF);
 }
 
+@font-face {
+  font-family: 'IM Fell English SC';
+  src: url(./fonts/IM_Fell_English_SC.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: americanWestern;
+  src: url(./fonts/American\ Western.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: robertoSlab;
+  src: url(./fonts/RobotoSlab-VariableFont_wght.ttf) format('truetype');
+  
+}
+
 
 header 
 {
@@ -127,7 +143,7 @@ h1
 
 .fullinfo
 { flex:1;
-  font-family: typewriter;
+  font-family: robertoSlab;
 	text-align:left;
   padding: 40px;
 	width:79vw;

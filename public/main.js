@@ -187,6 +187,8 @@ document.addEventListener('DOMContentLoaded', function() {
             simulateImpact((asteroid.diameterMin + asteroid.diameterMax) / 2, asteroid.velocity, 45, 1.38);
         }
 
+            
+
               //item found, return its information
               asteroidsInfo.innerHTML = `<br>
               <b>Name:</b> 
