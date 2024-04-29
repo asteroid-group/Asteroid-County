@@ -61,6 +61,12 @@ function pickAstro() {
   document.getElementById('pick_Astro').style.display = 'block';
 }
 
+function goback() {
+  document.getElementById('pick_route').style.display = 'block';
+  document.getElementById('pick_Astro').style.display = 'none';
+  document.getElementById('make_Astro').style.display = 'none';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('createAstro').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -91,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function simulateImpact(adiameter, aspeed, aangle, density) {
   var astroElement = document.getElementById('astroresults');
+  document.getElementById('asteroids-info').style.display='none';
 
   // Constants
   var pi = 2600; // Density of Earth's crust in kg/m³

@@ -83,7 +83,7 @@
 
         <div class="sidebar" id="make_Astro"> 
             <br>
-            <br>
+            <button id = miscbutton onclick= "goback()"> < Back</button>
             <br>
             <p id ="welcome-i">Make an Asteroid!</p>
             <form id="createAstro">
@@ -112,13 +112,18 @@
                 <input id = miscbutton type="submit" value="LAUNCH">
             </form>
             
+            
             <div id="astroresults"></div>
 
         </div>
 
         <div class="sidebar" id="pick_Astro"> 
             <div class="sidebar" id="loading-message"> Loading...</div>
-            <div class="sidebar" id="asteroid-buttons"></div>
+            <div class="sidebar" id="asteroid-buttons">
+                <button id = miscbutton onclick= "goback()"> < Back</button>
+                <br>
+                <p id ="welcome-i">Make an Impact!</p> 
+            </div>
 
             <div class="fullinfo" id="loading-message2">
                 

@@ -1,11 +1,11 @@
 let responseURL;
 //for testing
-//responseURL = 'http://localhost:4001';
+responseURL = 'http://localhost:4001';
 //empty for deployment
 
 
 
-responseURL = '';
+//responseURL = '';
 
 
 
@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
  //function to display asteroid names
     function displayAsteroidNames(data) {
         document.getElementById("loading-message").style.display = "none";
+        document.getElementById("asteroid-buttons").style.display = "block";
         const asteroidButtons = document.getElementById("asteroid-buttons");
 
         const asteroidsArray = Object.values(data); // Flatten the data object
@@ -194,9 +195,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // for image
             changeImage((asteroid.diameterMin + asteroid.diameterMax) / 2);
         }
-      
-
-            
+                  
+            const {date, time} = formatDateTime(asteroid.closeApproachDate);
 
               //item found, return its information
               asteroidsInfo.innerHTML = `<br>
@@ -205,19 +205,17 @@ document.addEventListener('DOMContentLoaded', function() {
               <h3 id="astname">${asteroid.name}</h3>
               <br>
               <br> 
-              <b>Close Approach Date:</b> ${asteroid.closeApproachDate} 
+              <p id="astinner"><b>Close Approach Date:</b> ${date} </p>
               <br>
+              <p id="astinner"><b>Close Approach Time (UTC):</b> ${time} </p>
               <br>
-              <b>Diameter Min: </b> ${asteroid.diameterMin} meters 
+              <p id="astinner"><b>Diameter Min: </b> ${asteroid.diameterMin} meters </p>
               <br>
+              <p id="astinner"><b>Diameter Max:</b> ${asteroid.diameterMax} meters</p>
+              <br>
+              <p id="astinner"><b>Velocity:</b> ${asteroid.velocity} km/h</p>
               <br> 
-              <b>Diameter Max:</b> ${asteroid.diameterMax} meters
-              <br>
-              <br> 
-              <b>Velocity:</b> ${asteroid.velocity} km/h
-              <br>
-              <br> 
-              <b>Potentially Hazardous?</b>: ${asteroid.potentiallyHazardous} 
+              <p id="astinner"><b>Potentially Hazardous?</b>: ${asteroid.potentiallyHazardous} </p>
               <br>
               <br> 
               `;
@@ -235,7 +233,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
     
-    
+    function formatDateTime(astDateTime){
+        const original = new Date(astDateTime);
+
+        const date = `${original.getFullYear()}-${String(
+            original.getMonth() + 1
+          ).padStart(2, "0")}-${String(original.getDate()).padStart(2, "0")}`;
+
+          const time = `${String(original.getUTCHours()).padStart(2, "0")}:${String(
+            original.getUTCMinutes()
+          ).padStart(2, "0")}:${String(original.getUTCSeconds()).padStart(2, "0")}`;
+        
+          return { date, time };
+    }
 
     
     //execute the API call function after the page has loaded

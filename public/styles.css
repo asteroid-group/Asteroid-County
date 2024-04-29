@@ -131,6 +131,7 @@ h1
 /* for asteroids/home page AND impacts */
 .sidebar
 { font-family: western;
+  padding-right: 15px;
 	width:19vw;
 	height:60vw;
 	overflow-x: hidden;
@@ -147,7 +148,7 @@ h1
   flex:1;
   font-family: robertoSlab;
 	text-align:left;
-  padding: 40px;
+  padding: 30px;
 	width:79vw;
 	height:60vw;
 	background-color:  rgb(214, 179, 134);
@@ -178,6 +179,11 @@ h1
 
 }
 
+#asteroid-buttons
+{
+  display:none;
+}
+
 #astname{
   font-family: western;
   font-size: 50px;
@@ -187,6 +193,8 @@ h1
 #asteroids-info{
   display:none;
 }
+#astinner{
+font-size:15px;}
 /* for end for asteroids and impacts */
 
 /* impacts.html for impact page  */
