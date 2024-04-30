@@ -133,7 +133,7 @@ body{
 { font-family: western;
   padding-right: 15px;
 	width:19vw;
-	height:75vw;
+	height:76vw;
 	overflow-x: hidden;
   overflow-y: auto;
   align-items: center;
@@ -150,7 +150,7 @@ body{
 	text-align:left;
   padding: 30px;
 	width:79vw;
-	height:75vw;
+	height:76vw;
 	background-color:  rgb(214, 179, 134);
 }
 
@@ -256,7 +256,7 @@ font-size:15px;}
   position: relative; 
   padding: 40px;
   width: 40vw;
-	height:75vw;
+	height:76vw;
   background-color:  rgb(214, 179, 134);
 }
 
@@ -286,6 +286,14 @@ font-size:15px;}
 #impactDia
 {
   font-family: 'IM Fell English SC';
+}
+
+.expandable {
+  cursor: pointer;
+}
+
+.expandable-content {
+  display: none;
 }
 /* end for impact simulator */
 

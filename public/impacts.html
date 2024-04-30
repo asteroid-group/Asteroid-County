@@ -108,6 +108,16 @@
                     <option value="m">M-Class</option>
                 </select>
                 <br>
+                <div class="expandable" onclick="toggleText()">
+                     <i>What is a 'Asteroid Class'?</i>
+                     <br><br>
+                    <div class="expandable-content" id="expandable-content">
+                        <p>Asteroid Class refers to their composition class.</p> 
+                        <p><b>C-Class</b>: Chondrite, clay and silicate rocks.</p>
+                        <p><b>S-Class</b>: Stony, silicate materials and nickel-iron.</p>
+                        <p><b>M-Class</b>: Metallic, nickel-iron.</p>
+                    </div>
+                </div>
                 <br>
                 <input id = miscbutton type="submit" value="LAUNCH">
             </form>
@@ -140,8 +150,7 @@
             
         <div class="fullinfo"> 
                 <!-- Ensure that the map container has sufficient height and width -->
-                <div id="reportDia">
-                    <h2 id="impactDia"></h2>
+                <div id="impactDia">
                 </div>
             <div id="map-container">
                 <div id="map" style="height: 500px; width: 100%;"></div>

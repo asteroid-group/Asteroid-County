@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return "The asteroid's orbit intersects Earth's orbit closely enough that there is <i>some</i> risk of a future impact. However, this does not imply guaranteed impact or harm! ";
         }
         else{
-            return "The asteroid's orbit does not intersect Earth's orbit. Therefore no future risk of impact";
+            return "The asteroid's orbit does not intersect Earth's orbit. Therefore there is no future risk of impact.";
         }
     }
 

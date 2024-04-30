@@ -122,9 +122,44 @@ function simulateImpact(adiameter, aspeed, aangle, density) {
 function returnDiameter(Dia)
 {
   const diameter = Dia;
-  
   const resultingDiameter = document.getElementById("impactDia");
-  resultingDiameter.innerHTML = `<b>Impact Diameter</b>: ${diameter} meters`;
+  resultingDiameter.innerHTML = `<h4><b>Impact Diameter</b>: ${diameter} meters</h4>`;
+  if(diameter>=0 && diameter < 21){
+    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Garden!</i></b></h4>`
+  } else if (diameter >= 21 && diameter < 41) {
+    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Home!</i></b></h4>`
+  }
+  else if (diameter >= 41 && diameter < 71) {
+    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Mansion!</i></b></h4>`
+  }
+  else if (diameter >= 71 && diameter < 520) {
+    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Block!</i></b></h4>`
+  }
+  else if (diameter >= 520 && diameter < 1060) {
+    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Neighborhood!</i></b></h4>`
+  }
+  else if (diameter >= 1060 && diameter < 6000) {
+    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Town!</i></b></h4>`
+  }
+  else if (diameter >= 6000 && diameter < 10001) {
+    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid City!</i></b></h4>`
+  }
+  else {
+    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid County!</i></b></h4>`
+  }
 
+
+
+  
+
+}
+
+function toggleText() {
+  var content = document.getElementById("expandable-content");
+  if (content.style.display === "none") {
+      content.style.display = "block";
+  } else {
+      content.style.display = "none";
+  }
 }
 
