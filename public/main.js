@@ -1,11 +1,11 @@
 let responseURL;
 //for testing
-//responseURL = 'http://localhost:4001';
+responseURL = 'http://localhost:4001';
 //empty for deployment
 
 
 
-responseURL = '';
+//responseURL = '';
 
 
 
@@ -191,12 +191,15 @@ document.addEventListener('DOMContentLoaded', function() {
             simulateImpact((asteroid.diameterMin + asteroid.diameterMax) / 2, asteroid.velocity, 45, 1.38);
 
         }
+        document.getElementById("image-container").style.display = "block";
         if (typeof changeImage === 'function') {
             // for image
             changeImage((asteroid.diameterMin + asteroid.diameterMax) / 2);
         }
                   
             const {date, time} = formatDateTime(asteroid.closeApproachDate);
+            let torf = formatHazard(asteroid.potentiallyHazardous);
+            let hazmessage = hazardClarity(asteroid.potentiallyHazardous);
 
               //item found, return its information
               asteroidsInfo.innerHTML = `<br>
@@ -215,7 +218,9 @@ document.addEventListener('DOMContentLoaded', function() {
               <br>
               <p id="astinner"><b>Velocity:</b> ${asteroid.velocity} km/h</p>
               <br> 
-              <p id="astinner"><b>Potentially Hazardous?</b>: ${asteroid.potentiallyHazardous} </p>
+              <p id="astinner"><b>Potentially Hazardous?</b>: `+ torf + `</p>
+              <div id="extra"><img src="./images/skull.png" alt="???" style="width:30%; height:auto;"><p> `
+              + hazmessage +  `</p></div>
               <br>
               <br> 
               `;
@@ -245,6 +250,32 @@ document.addEventListener('DOMContentLoaded', function() {
           ).padStart(2, "0")}:${String(original.getUTCSeconds()).padStart(2, "0")}`;
         
           return { date, time };
+    }
+
+    function formatHazard(whatisit){
+        const tf = whatisit;
+
+        if(tf === true)
+        {
+            return 'True';
+        }
+        else{
+            return 'False';
+        }
+    }
+
+    function hazardClarity(whatisit){
+        const tf = whatisit;
+
+
+        if(tf === true)
+        {
+    
+            return "The asteroid's orbit intersects Earth's orbit closely enough that there is <i>some</i> risk of a future impact. However, this does not imply guaranteed impact or harm! ";
+        }
+        else{
+            return "The asteroid's orbit does not intersect Earth's orbit. Therefore no future risk of impact";
+        }
     }
 
     

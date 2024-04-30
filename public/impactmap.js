@@ -124,7 +124,7 @@ function returnDiameter(Dia)
   const diameter = Dia;
   
   const resultingDiameter = document.getElementById("impactDia");
-  resultingDiameter.innerHTML = `Impact Diameter: ${diameter} meters`;
+  resultingDiameter.innerHTML = `<b>Impact Diameter</b>: ${diameter} meters`;
 
 }
 

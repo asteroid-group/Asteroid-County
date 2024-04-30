@@ -80,7 +80,7 @@ body{
 }
 
 
-h1
+#websiteTitle
 {
 	text-align: center;
 	font-family: rustica;
@@ -195,6 +195,17 @@ h1
 }
 #astinner{
 font-size:15px;}
+
+#extra
+{
+  display:flex;
+  text-align: center;
+	font-family:robertoSlab;
+  font-size: 15px;
+  color: black;
+	padding-top: none;
+	text-shadow: none;
+}
 /* for end for asteroids and impacts */
 
 /* impacts.html for impact page  */
@@ -241,8 +252,10 @@ font-size:15px;}
 }
 
 #image-container {
+  display: none;
   position: relative; 
   padding: 40px;
+  width: 40vw;
 	height:75vw;
   background-color:  rgb(214, 179, 134);
 }
@@ -268,6 +281,11 @@ font-size:15px;}
   cursor: pointer;
   background-color: black;
   color:#ddd;
+}
+
+#impactDia
+{
+  font-family: 'IM Fell English SC';
 }
 /* end for impact simulator */
 
