@@ -133,7 +133,7 @@ h1
 { font-family: western;
   padding-right: 15px;
 	width:19vw;
-	height:60vw;
+	height:75vw;
 	overflow-x: hidden;
   overflow-y: auto;
   align-items: center;
@@ -150,7 +150,7 @@ h1
 	text-align:left;
   padding: 30px;
 	width:79vw;
-	height:60vw;
+	height:75vw;
 	background-color:  rgb(214, 179, 134);
 }
 
@@ -198,6 +198,17 @@ font-size:15px;}
 /* for end for asteroids and impacts */
 
 /* impacts.html for impact page  */
+#createAstro{
+  font-family: robertoSlab;
+  padding-right: 15px;
+	overflow-x: hidden;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+	background-color:#CC6600;
+
+}
 #cont-impacts{
   display: flex;
   flex-wrap: wrap;
@@ -232,7 +243,7 @@ font-size:15px;}
 #image-container {
   position: relative; 
   padding: 40px;
-	height:60vw;
+	height:75vw;
   background-color:  rgb(214, 179, 134);
 }
 

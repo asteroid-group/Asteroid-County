@@ -112,9 +112,19 @@ function simulateImpact(adiameter, aspeed, aangle, density) {
   var L = adiameter * Math.sin(aangle); // Diameter after entering atmosphere
   var D = constant * Math.pow((pi * density * L * Math.pow(aspeed, 2) * Math.pow(gE, -0.22) * Math.sin(aangle)), 1/3);
 
+
   // Update the radius in meters
   var drawRadius = D / 2;
   updateRadius(drawRadius);
+  returnDiameter(D);
 }
 
+function returnDiameter(Dia)
+{
+  const diameter = Dia;
+  
+  const resultingDiameter = document.getElementById("impactDia");
+  resultingDiameter.innerHTML = `Impact Diameter: ${diameter} meters`;
+
+}
 
