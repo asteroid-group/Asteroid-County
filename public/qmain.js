@@ -136,7 +136,7 @@ function nextQuestion() {
         messageElement.innerHTML =
         `<h4><b>Asteroid City Mayor!</b></h4>
         <p>Hooray!!! Here is the key to the city!</p>
-        <a href="./images/award.jpg" target="_blank"><img id = "cityk" src="./images/cityk.jpg" alt="The City Key"></a>
+        <a href="./images/award.jpg" target="_blank"><img id = "cityk" src="./images/cityk.png" alt="The City Key"></a>
         <p> click the key!</p>`
 
        }

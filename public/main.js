@@ -1,11 +1,11 @@
 let responseURL;
 //for testing
-responseURL = 'http://localhost:4001';
+//responseURL = 'http://localhost:4001';
 //empty for deployment
 
 
 
-//responseURL = '';
+responseURL = '';
 
 
 
