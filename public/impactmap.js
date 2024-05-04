@@ -123,33 +123,32 @@ function returnDiameter(Dia)
 {
   const diameter = Dia;
   const resultingDiameter = document.getElementById("impactDia");
-  resultingDiameter.innerHTML = `<h4><b>Impact Diameter</b>: ${diameter} meters</h4>`;
+  resultingDiameter.innerHTML = "";
   if(diameter>=0 && diameter < 21){
-    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Garden!</i></b></h4>`
+    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid Garden</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   } else if (diameter >= 21 && diameter < 41) {
-    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Home!</i></b></h4>`
+    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid Home</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
   else if (diameter >= 41 && diameter < 71) {
-    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Mansion!</i></b></h4>`
+    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid Mansion</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
   else if (diameter >= 71 && diameter < 520) {
-    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Block!</i></b></h4>`
+    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid Block</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
   else if (diameter >= 520 && diameter < 1060) {
-    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Neighborhood!</i></b></h4>`
+    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid Neighborhood</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
   else if (diameter >= 1060 && diameter < 6000) {
-    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid Town!</i></b></h4>`
+    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid Town</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
   else if (diameter >= 6000 && diameter < 10001) {
-    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid City!</i></b></h4>`
+    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid City</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
   else {
-    resultingDiameter.innerHTML += `<h4>You made an <b><i>Asteroid County!</i></b></h4>`
+    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid County</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
 
-
-
+  resultingDiameter.innerHTML += `<h4><b>Impact Diameter</b>: ${diameter} meters</h4>`;
   
 
 }

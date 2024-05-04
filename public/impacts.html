@@ -75,8 +75,8 @@
             <br>
             <br>
             <br>
-            <p id ="welcome-i">Hello! Let's make an Impact</p> 
-            <button id = miscbutton onclick= "makeAstro()">Make My Own</button>
+            <p id ="welcome-i">Pick a Route <img src="./images/pickplsd.png" alt="please pick one" style=" width:10%; height:auto;"></p> 
+            <button id = miscbutton onclick= "makeAstro()">Make an Asteroid</button>
             <br>
             <button id = miscbutton onclick= "pickAstro()">Pick an Asteroid</button>
         </div>
@@ -96,7 +96,7 @@
                 <input type="number" id="speed" name="speed" min = "1" max = "999999" required>
                 <br>
                 <br>
-                <label for="angle">Angle(1 - 90):</label>
+                <label for="angle">Angle (1 - 90):</label>
                 <input type="number" id="angle" name="angle" min="1" max="90" required>
                 <br>
                 <br>
@@ -132,7 +132,7 @@
             <div class="sidebar" id="asteroid-buttons">
                 <button id = miscbutton onclick= "goback()"> < Back</button>
                 <br>
-                <p id ="welcome-i">Make an Impact!</p> 
+                <p id ="welcome-i">Pick an Asteroid!</p> 
             </div>
 
             <div class="fullinfo" id="loading-message2">
@@ -151,6 +151,7 @@
         <div class="fullinfo"> 
                 <!-- Ensure that the map container has sufficient height and width -->
                 <div id="impactDia">
+                    <h2>Let's Make an Impact<img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>
                 </div>
             <div id="map-container">
                 <div id="map" style="height: 500px; width: 100%;"></div>

@@ -109,13 +109,14 @@ body{
 }
 
 .topnav a {
-  font-family: want;
+  font-family: rustica;
   float: left;
   color: rgb(58, 46, 33);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 24px;
+  letter-spacing: 1px;
 }
 
 .topnav a:hover {
@@ -178,6 +179,12 @@ body{
   color: rgb(58, 46, 33);
 
 }
+
+.asteroid-button.active {
+  background-color: rgb(214, 179, 134);
+  color: rgb(58, 46, 33);
+}
+
 
 #asteroid-buttons
 {
@@ -285,7 +292,8 @@ font-size:15px;}
 
 #impactDia
 {
-  font-family: 'IM Fell English SC';
+  font-family: rustica;
+  letter-spacing: 2px;
 }
 
 .expandable {
@@ -294,6 +302,12 @@ font-size:15px;}
 
 .expandable-content {
   display: none;
+}
+
+#excla
+{
+  width:1.5%; 
+  height:auto;
 }
 /* end for impact simulator */
 
