@@ -318,7 +318,7 @@ font-size:15px;}
   text-align: center;
 	font-family:typewriter;
 	font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
   color: black;
 	padding-top: none;
 	text-shadow: none;
@@ -326,7 +326,7 @@ font-size:15px;}
 
 #startq{
     text-align: center;
-    font-family:typewriter;
+    font-family:robertoSlab;
     font-size: 30px;
     color: black;
     padding-top: none;
@@ -340,16 +340,19 @@ font-size:15px;}
 }
 .intro-container, .quiz-container, .result-container, .source-container
 {
-	font-family: typewriter;
+	font-family: robertoSlab;
+  font-size:15px;
 
 }
 
 .quiz-container {
 	display: none;
+
 }
 
 .result-container{
 	display:none;
+
 }
 
 #results, #Fresults
@@ -366,13 +369,13 @@ font-size:15px;}
 #tostudy{
   padding:5px;
 	text-align:right;
-	font-family: regspace;
+	font-family: robertoSlab;
 
 }
 
 #link
 {
-  font-family:typewriter;
+  font-family:robertoSlab;
 	color:white;
 	font-weight: bold;
 }
@@ -395,7 +398,7 @@ font-size:15px;}
 
 .about-container
 {
-  font-family: typewriter;
+  font-family: robertoSlab;
 }
 
 #about-card

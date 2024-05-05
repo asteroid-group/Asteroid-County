@@ -98,7 +98,7 @@ function displayQuestion() {
     var resultElement = document.getElementById('results');
     var qnumElement = document.getElementById('questionNum');
     resultElement.innerHTML =`<h3 id="score-card-t">Current Score: ${score}/${totalq}`;
-    qnumElement.textContent = qnum + "/" + totalq;
+    qnumElement.textContent =  qnum + "/" + totalq;
     questionElement.textContent = questions[currentQuestionIndex].question;
     optionsElement.innerHTML = '';
     questions[currentQuestionIndex].options.forEach(function(option) {
