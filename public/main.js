@@ -158,17 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const asteroidsArray = Object.values(data); // Flatten the data object
 
-        function handleButtonStates(clickedButton) {
-            const buttons = document.querySelectorAll('.asteroid-button');
-            buttons.forEach(function(btn) {
-                if (btn === clickedButton) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-
         for (const asteroid of asteroidsArray) {
             const button = document.createElement("button");
             button.classList.add("asteroid-button");
@@ -177,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener("click", function() {
                 displayAsteroidInfo(asteroidsArray,asteroid.id);
                 
-               // Call the function to handle button states
                 handleButtonStates(button);
             });
             asteroidButtons.appendChild(button);
@@ -202,8 +190,8 @@ document.addEventListener('DOMContentLoaded', function() {
               //default values
             if (typeof simulateImpact === 'function') {
             // Default values
-            simulateImpact((asteroid.diameterMin + asteroid.diameterMax) / 2, asteroid.velocity, 45, 1.38);
-            
+            simulateImpact((asteroid.diameterMin + asteroid.diameterMax) / 2, asteroid.velocity, 45, 1.38, asteroid.name);
+           // asteroidName(asteroid.name);
 
         }
         document.getElementById("image-container").style.display = "block";

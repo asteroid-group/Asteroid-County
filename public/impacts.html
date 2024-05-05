@@ -45,7 +45,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-    <style>
+     <style>
         #loading-message2 {
             display: none;
         }
@@ -132,35 +132,23 @@
             <div class="sidebar" id="asteroid-buttons">
                 <button id = miscbutton onclick= "goback()"> < Back</button>
                 <br>
-                <p id ="welcome-i">Pick an Asteroid!</p> 
+                <p id ="welcome-i">Pick an Asteroid!</p>
             </div>
-
-            <div class="fullinfo" id="loading-message2">
-                
-            </div>
-
-            
+            <div class="fullinfo" id="loading-message2"></div>
         </div>
 
-
-
-        <!--
-  
-    -->
-            
         <div class="fullinfo"> 
-                <!-- Ensure that the map container has sufficient height and width -->
                 <div id="impactDia">
-                    <h2>Let's Make an Impact<img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>
+                    <h2 style="padding-top: 0px;">Let's Make an Impact<img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>
                 </div>
+                 <!-- Ensure that the map container has sufficient height and width -->
             <div id="map-container">
                 <div id="map" style="height: 500px; width: 100%;"></div>
+              
 
-
-                
                 <div class="equation">
                     <!-- Equation -->
-
+    
                     <strong>Estimation of Initial Asteroid Crater Equation</strong><br>
                     Diameter = \(1.161\left(\frac{p_i}{p_t}\right)^{\frac{1}{3}}L^{0.78}v_i^{0.44}g_E^{-0.22}\sin^{\frac{1}{3}}\Theta\)<br>
                     1.161 Constant for solid rock targets; 1.365 for water target<br>
@@ -172,18 +160,14 @@
                     \(\Theta\) = Angle of Impact (default of 45 degrees)
                 </div>
             </div>
+        
                 
         </div>
-
-        
-
-        <div class="fullinfo" id="asteroids-info"></div>
-        
+        <div class="fullinfo" id="asteroids-info">
+        </div>   
         
     </div>
     
-    
-</div>
     <footer>
     
     </footer>

@@ -146,15 +146,15 @@ function nextQuestion() {
 
         if( score >= 8  && score <= 9)
         {
-         messageElement.innerHTML = `<h4><b>Asteroid Ranger</b></h4><p>Almost!!</p><hr>`  
+         messageElement.innerHTML = `<h4><b>Asteroid Ranger</b></h4><p>Almost!!</p>`  
         }
         else if( score >= 6 && score <= 7)
         {
-        messageElement.innerHTML = `<h4><b>Asteroid Citizen</b></h4><p>So close!!</p><hr>`
+        messageElement.innerHTML = `<h4><b>Asteroid Citizen</b></h4><p>So close!!</p>`
         }
         else
         {
-        messageElement.innerHTML = `<h4><b>Asteroid Student</b></h4><p>Better luck next time!</p><hr>`
+        messageElement.innerHTML = `<h4><b>Asteroid Student</b></h4><p>Better luck next time!</p>`
         }
     }
 

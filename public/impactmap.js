@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('createAstro').addEventListener('submit', function(event) {
     event.preventDefault();
 
+    var name;
     var adiameter = parseInt(document.getElementById('diameter').value);
     var aspeed = parseInt(document.getElementById('speed').value);
     var aangle = parseInt(document.getElementById('angle').value);
@@ -85,19 +86,24 @@ document.addEventListener('DOMContentLoaded', function() {
       density = 5.32;
     }
 
-    simulateImpact(adiameter, aspeed, aangle, density);
+    simulateImpact(adiameter, aspeed, aangle, density, name);
     
-    
-    //seems better if it doesn't reset so you can play with values
-    //this.reset();
+
   });
+
+  
 });
 
 
 
-function simulateImpact(adiameter, aspeed, aangle, density) {
+
+function simulateImpact(adiameter, aspeed, aangle, density, name) {
+  
   var astroElement = document.getElementById('astroresults');
   document.getElementById('asteroids-info').style.display='none';
+ 
+  //pass and convert name
+  let astN = name;
 
   // Constants
   var pi = 2600; // Density of Earth's crust in kg/m³
@@ -116,16 +122,19 @@ function simulateImpact(adiameter, aspeed, aangle, density) {
   // Update the radius in meters
   var drawRadius = D / 2;
   updateRadius(drawRadius);
-  returnDiameter(D);
+  returnDiameter(name,D);
 }
 
-function returnDiameter(Dia)
+
+function returnDiameter(name, Dia)
 {
   const diameter = Dia;
+  let an = name;
   const resultingDiameter = document.getElementById("impactDia");
   resultingDiameter.innerHTML = "";
+ 
   if(diameter>=0 && diameter < 21){
-    resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid Garden</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
+    resultingDiameter.innerHTML = `<h2 >You made an <b><i>Asteroid Garden</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   } else if (diameter >= 21 && diameter < 41) {
     resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid Home</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
@@ -148,7 +157,13 @@ function returnDiameter(Dia)
     resultingDiameter.innerHTML = `<h2>You made an <b><i>Asteroid County</i></b><img id= "excla" src="./images/exclamation2.png" alt="please pick one"></h2>`
   }
 
-  resultingDiameter.innerHTML += `<h4><b>Impact Diameter</b>: ${diameter} meters</h4>`;
+  if(an)
+    {
+      resultingDiameter.innerHTML += `<p style = "font-size: 20px">Asteroid Name: ${an}</p>`
+    }
+
+
+  resultingDiameter.innerHTML += `<p style = "font-size: 20px">Impact Diameter: ${diameter} meters</p>`;
   
 
 }
@@ -161,4 +176,5 @@ function toggleText() {
       content.style.display = "none";
   }
 }
+
 

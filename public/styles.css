@@ -134,7 +134,7 @@ body{
 { font-family: western;
   padding-right: 15px;
 	width:19vw;
-	height:76vw;
+	height:80vw;
 	overflow-x: hidden;
   overflow-y: auto;
   align-items: center;
@@ -151,7 +151,7 @@ body{
 	text-align:left;
   padding: 30px;
 	width:79vw;
-	height:76vw;
+	height:80vw;
 	background-color:  rgb(214, 179, 134);
 }
 
@@ -263,7 +263,7 @@ font-size:15px;}
   position: relative; 
   padding: 40px;
   width: 40vw;
-	height:76vw;
+	height:80vw;
   background-color:  rgb(214, 179, 134);
 }
 
@@ -294,6 +294,7 @@ font-size:15px;}
 {
   font-family: rustica;
   letter-spacing: 2px;
+  padding-top: 0px;
 }
 
 .expandable {
@@ -363,6 +364,7 @@ font-size:15px;}
 }
 
 #tostudy{
+  padding:5px;
 	text-align:right;
 	font-family: regspace;
 
@@ -370,6 +372,7 @@ font-size:15px;}
 
 #link
 {
+  font-family:typewriter;
 	color:white;
 	font-weight: bold;
 }
@@ -379,6 +382,7 @@ font-size:15px;}
 	color:black;
 	font-weight: bold;
 }
+
 
 #cityk
 {
@@ -397,4 +401,10 @@ font-size:15px;}
 #about-card
 {
   background-color: rgb(214, 179, 134);
+}
+
+#aboutlinks
+{
+	color:rgb(79, 25, 4);
+	font-weight: bold;
 }
